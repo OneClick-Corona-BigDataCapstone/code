@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <title>One Click COVID-19</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" media="screen and (min-width: 769px)" href="css/chart.css" /> <!-- 데스크탑 -->
+    <link rel="stylesheet" media="screen and (max-width: 768px)" href="css/chart.mobile.css" /> <!-- Phone-->
+
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/data.css">
+    <!-- <link rel="stylesheet" href="css/chart.css"> -->
+    <link rel="stylesheet" href="css/notice.css">
+    <link rel="stylesheet" href="css/statement.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+    <script>
+      // var key = "LjRenkAdJ357E3TIpG04kw03oLlrPFJlmz39%2FADdK2vMqi4eZ7DepCp%2Fd0K7H9eCRG1OL4Qw3KnUSh4vmvuCUA%3D%3D";
+      // var url = "http://openapi.data.go.kr/openapi/service/rest/Covid19/getCovid19SidoInfStateJson?serviceKey=" + key + "&pageNo=1&numOfRows=10&startCreateDt=20200410&endCreateDt=20200410";
+      // $.ajax({
+      //   type: "get",
+      //   url: url,
+      //   contentType: "text/xml; charset=utf-8",
+      //   dataType: 'jsonp',
+      //   success: function (response) {
+      //     console.log("success response : " , response);
+      //       $('#result').html('success:');
+      //       $(response).find("string").each(function () {
+      //           $('#result').append('<br />'+$(this).text());
+      //       });
+      //   },
+      //   error: function (response) {
+      //     console.log("error response : " , response);
+      //       $('#result').html('failure:<br />' + response.responseText);
+      //   },
+      //   fail: function(err){
+      //     console.log("err : ", err);
+      //   }
+      // });
+
+      function onPage(value){
+        console.log("!!");
+        $(".wrap").load('/page/' + value);
+      }
+    </script>
+</head>
+<body>
+    <div id="header">
+        <div class="logo" class="clearfix">
+            <img src="images/logo-01.png" alt="#">
+        </div>
+        <div class="menu" class="clearfix">
+            <ul>
+                <li onclick="onPage('data')"><a>Data</a></li>
+                <li onclick="onPage('chart')"><a>Chart</a></li>
+                <li class="me" onclick="onPage('statement')"><a>Statement</a></li>
+                <li onclick="onPage('notice')"><a>Notice</a></li>
+            </ul>
+        </div>
+        <div class="calendar" class="clearfix">
+            <img src="images/calendar-01.png"; alt="" class="cal">
+        </div>
+    </div>
+   <div class="wrap">
+
+   </div>
+</body>
+</html>
