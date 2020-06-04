@@ -28,7 +28,7 @@ function handleDisconnect(){
 	});
 }
 
-// handleDisconnect();
+handleDisconnect();
 
 app.use(express.static('public'));
 app.set('views', __dirname + '/public/images');

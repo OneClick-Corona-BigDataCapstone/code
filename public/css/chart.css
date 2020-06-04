@@ -1,3 +1,15 @@
-.chartWrap {
-  width:60%;
+
+div.chatWrap > #selectWrap{
+  width:20%;
+  position: absolute;
+  left:40%;
+  margin-top: 2%;
+}
+
+div.chatWrap > #chartWrap {
+position: absolute;
+width:60%;
+height:60%;
+left:20%;
+top:25%;
 }
