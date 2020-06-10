@@ -13,6 +13,8 @@
 ### **SEVER**
 ● NodeJS :<https://velopert.com/133>
 
+● mysql :<https://dog-developers.tistory.com/20>
+
 NodeJS는 다양한 오픈 라이브러리를 쉽게 다운받아 웹, 앱 개발에 사용되는 소프트웨어입니다. Express 모듈을 설치해서 컴퓨터를 서버로 사용할수도 있고, pm2나, fs 등과 같은 모듈을 사용해서 파일을 관리하거나, 프로그램의 생명주기를 관리하기도 합니다.
 
 본 프로젝트에서는 NodeJS의 Express 및 관련 서버 모듈들을 설치해서, 서버를 구축하는데 사용됩니다.
