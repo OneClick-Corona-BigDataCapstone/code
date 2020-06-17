@@ -1,7 +1,7 @@
 module.exports = {
   host     : 'localhost',
   user     : 'root',
-  password : 'emsys1001',
+  password : 'emsys$$$',
   port     : 3306,
   database : 'covid19'
 };

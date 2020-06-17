@@ -1,16 +1,38 @@
 #dataWrap {
+  font-family: 'ON-IGothic',AppleGothic,sans-serif;
   position: absolute;
-  left:20%;
+  left:15%;
   height:100%;
-  width:60%;
+  width:70%;
   margin-top: 50px;
 }
-#dataWrap > #header > h5{
+#dataWrap > #header > .header_title{
+  top:30px;
+  position:relative;
+}
+#dataWrap > #header > .header_title > img{
+  position:absolute;
+  right:0px;
+  top:0px;
+  height:50px;
+  cursor: pointer;
+}
+
+#dataWrap > #header > .header_title > input{
+  position:absolute;
+  height:2px;
+  width:2px;
+  top:10px;
+  right:30px;
+  /* display: none; */
+}
+
+#dataWrap > #header > .header_title > h2{
   font-size: 20px;
   font-weight: bold;
 
 }
-#dataWrap > #header > h2{
+#dataWrap > #header > .header_title > h5{
   font-size: 10px;
 }
 #dataWrap > #header > .headerTitleWrap{
@@ -18,6 +40,7 @@
   height: 40px;
   position: absolute;
   left: 0;
+  top:100px;
 }
 
 #dataWrap > #header > .headerTitleWrap > .confirmCountWrap{
@@ -45,15 +68,41 @@
     height: 180px;
     position: absolute;
     left: 1.5%;
-    top:97px;
+    top:147px;
     background: #f2f2f2;
+}
+
+#dataWrap > #header > .headerContentsWrap > div > .contentWrap{
+  width:25%;
+  height:100%;
+  float:left;
+
+}
+
+#dataWrap > #header > .headerContentsWrap > div > .contentWrap > a{
+  text-align: center;
+  width: 100%;
+  height:30px;
+  float: left;
+  font-weight: bold;
+}
+
+#dataWrap > #header > .headerContentsWrap > div > .contentWrap > a.contentTitle{
+  height:70px;
+  line-height: 70px;
+  font-size: 22px;
+  color: #0b2284;
+}
+
+
+#dataWrap > #header > .headerContentsWrap > div > .contentWrap > a.contentConfirm{
 }
 
 #data{
   width:100%;
   height:200px;
   position: absolute;
-  top:330px;
+  top:340px;
 }
 
 #data > .dataContentWrap{
@@ -88,7 +137,24 @@
     border-radius: 5px;
 }
 
-#data > .dataContentWrap > #chartWrap{
+#data > .dataContentWrap > .dataContentSubWrap > .dataContentTable{
+  width:100%;
+  height:100%;
+}
+#data > .dataContentWrap > .dataContentSubWrap > .dataContentTable > tbody > tr > td{
+  width:50%;
+  float:left;
+}
+#data > .dataContentWrap > .dataContentSubWrap > .dataContentTable > tbody > tr > td:first{
+  width:50%;
+  float:right;
+}
+
+#data > .dataContentWrap > .dataContentSubWrap > .dataContentTable > tbody > tr > td > a{
+  color:#0b2284;
+}
+
+#data > .dataContentWrap > .chartWrap{
     position: absolute;
     width:60%;
     height: 100%;
@@ -100,7 +166,7 @@
 
 }
 
-#data > .dataContentWrap > #chartWrap > canvas{
+#data > .dataContentWrap > .chartWrap > canvas{
   width: 100%;
   height: 100%;
 }
@@ -155,7 +221,101 @@
 
 #map > .titleWrap > p{
   text-align: center;
-
   line-height: 40px;
   color: #ffffff;
+}
+
+
+#map > .mapWrap{
+    width:65%;
+    height:600px;
+    float: left;
+    left:10%;
+    position: absolute;
+    top:50px;
+}
+#map > .infoWrap{
+    width:34.5%;
+    height:1107px;
+    background: #f2f2f2;
+    float: left;
+    left:64%;
+    position: absolute;
+    top:50px;
+    border-radius: 5px;
+}
+#map > .infoWrap > .titleWrap{
+  width:100%;
+  height:60px;
+  position: relative;
+}
+
+#map > .infoWrap > .titleWrap > a{
+  float:left;
+}
+
+#map > .infoWrap > .titleWrap > .info_title01{
+  font-weight: bold;
+  font-size: 35px;
+  position: absolute;
+  left:5%;
+  top:20%;
+}
+
+#map > .infoWrap > .titleWrap > .info_title02{
+  width: 40%;
+  left:30%;
+  top:5%;
+  font-weight: bold;
+  font-size: 17px;
+  position: absolute;
+  text-align: center;
+  line-height: 35px;
+}
+
+#map > .infoWrap > .chartWrap{
+  width:100%;
+  height:200px;
+}
+
+#map > .infoWrap > .infoTable{
+  width:100%;
+  height:200px;
+  margin-top: 100px;
+}
+
+#map > .infoWrap > .infoTable > tbody > tr {
+  width: 100%;
+  height:40px;
+}
+
+#map > .infoWrap > .infoTable > tbody > tr > td.title > a{
+  float:left;
+  padding-left: 20px;
+}
+
+#map > .infoWrap > .infoTable > tbody > tr > tr.value > a{
+  float:right;
+}
+
+#map > .infoWrap > .linkTable{
+  position: absolute;
+  bottom:0px;
+  width:100%;
+  height:180px;
+}
+
+#map > .infoWrap > .linkTable > tbody > tr {
+  width:100%;
+  height:60px;
+  float:left;
+  background:#000000;
+}
+
+#map > .infoWrap > .linkTable > tbody > tr > td > a{
+  width: 100%;
+  line-height: 60px;
+  text-align: center;
+  color: #ffffff;
+  padding-left: 20px;
 }

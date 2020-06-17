@@ -1,3 +1,4 @@
+<!-- // 웹페이지를 열면 가장 먼저 들어오는 부분. -->
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -7,41 +8,29 @@
     <link rel="stylesheet" media="screen and (min-width: 769px)" href="css/chart.css" /> <!-- 데스크탑 -->
     <link rel="stylesheet" media="screen and (max-width: 768px)" href="css/chart.mobile.css" /> <!-- Phone-->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
-
     <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="css/data.css">
-    <!-- <link rel="stylesheet" href="css/chart.css"> -->
+    <link rel="stylesheet" href="css/fonts.css">
     <link rel="stylesheet" href="css/notice.css">
     <link rel="stylesheet" href="css/statement.css">
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
-    <link rel="stylesheet" href="js/request.js">
     <script>
-      // var key = "LjRenkAdJ357E3TIpG04kw03oLlrPFJlmz39%2FADdK2vMqi4eZ7DepCp%2Fd0K7H9eCRG1OL4Qw3KnUSh4vmvuCUA%3D%3D";
-      // var url = "http://openapi.data.go.kr/openapi/service/rest/Covid19/getCovid19SidoInfStateJson?serviceKey=" + key + "&pageNo=1&numOfRows=10&startCreateDt=20200410&endCreateDt=20200410";
-      // $.ajax({
-      //   type: "get",
-      //   url: url,
-      //   contentType: "text/xml; charset=utf-8",
-      //   dataType: 'jsonp',
-      //   success: function (response) {
-      //     console.log("success response : " , response);
-      //       $('#result').html('success:');
-      //       $(response).find("string").each(function () {
-      //           $('#result').append('<br />'+$(this).text());
-      //       });
-      //   },
-      //   error: function (response) {
-      //     console.log("error response : " , response);
-      //       $('#result').html('failure:<br />' + response.responseText);
-      //   },
-      //   fail: function(err){
-      //     console.log("err : ", err);
-      //   }
-      // });
-      $(".wrap").load('/page/data');
+
+      // 세션을 초기화한다.
+      sessionStorage.clear();
+
+      $(document).ready(function(){
+        // index 페이지가 열리면 가장먼저 data 화면을 요청해서 wrap id에 load 한다.
+        $(".wrap").load('/page/data');
+      });
+
+      // 위에 헤더메뉴를 누르면, wrap id에 요청한 화면을 load한다.
       function onPage(value){
         $(".wrap").load('/page/' + value);
+
+        // 페이지 이동할때 달력이 남아있어서 이동할때마다 달력을 숨김.
+        $(".datepickers-container").hide();
       }
     </script>
 </head>
@@ -50,22 +39,16 @@
       <div class="logo">
           <img src="images/logo-01.png" alt="#">
       </div>
-      
-      <div class="calendar" >
-          <img src="images/calendar-01.png"; alt="" class="cal">
-      </div>
-
       <div class="menu" class="clearfix">
           <ul>
               <li onclick="onPage('data')"><a>Data</a></li>
               <li onclick="onPage('chart')"><a>Chart</a></li>
-              <li class="me" onclick="onPage('statement')"><a>Statement</a></li>
+              <li onclick="onPage('statement')"><a>Statement</a></li>
               <li onclick="onPage('notice')"><a>Notice</a></li>
           </ul>
       </div>
   </div>
    <div class="wrap">
-
    </div>
 </body>
 </html>

@@ -6,7 +6,6 @@ var mysql 		= require('mysql');
 var cors = require('cors'); // 'cors' 크롬 확장프로그램 모듈. localhost 보안규칙을 해결해줌
 
 var connection;
-
 function handleDisconnect(){
 	connection = mysql.createConnection(dbconfig);
 
@@ -35,15 +34,14 @@ app.set('views', __dirname + '/public/images');
 app.set('views', __dirname + '/views');
 app.set('view engine', 'ejs');
 app.engine('html', require('ejs').renderFile);
-app.use(cors({origin: 'http://localhost:3000'}));
-
-var server = app.listen(3000, function(){
- console.log("Express server has started on port 3000")
-});
 
 app.use(express.static('public'));
-
+app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded());
 
 var router = require('./router/main')(app, connection);
+
+var server = app.listen(3000, function(){
+ console.log("Express server has started on port 3000")
+});
